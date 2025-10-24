@@ -3,23 +3,22 @@
 layout: home
 
 hero:
-  name: "flowjs-docs"
-  text: "Documentation Website for FlowJS"
-  tagline: My great project tagline
+  name: "FLOW"
+  text: "Simplifying 3D for the modern web"
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: See Documentation
       link: /markdown-examples
     - theme: alt
-      text: API Examples
+      text: Example Scene
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Less Boilerplate
+    details: Want to build a 3D scene? Do that with just one function call.
+  - title: More Performance
+    details: With optimization features like Level of Detail and Progressive Loading
+  - title: Flexible
+    details: Compatible with any framework or any browser that supports WebGL
 ---
 
