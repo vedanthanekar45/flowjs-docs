@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: See Documentation
-      link: /markdown-examples
+      link: /examples/markdown-examples
     - theme: alt
       text: Example Scene
       link: /api-examples
