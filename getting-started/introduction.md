@@ -2,7 +2,7 @@
 
 ## Overview
 
-Creating interactive 3D content for the web often requires developers to manually export models from Blender, import them into Three.js, and configure materials, lighting, and environments. 
+Creating interactive 3D content for the web often requires developers to manually export models from 3D softwares like Blender or Cinema4D, import them into Three.js, and configure materials, lighting, and environments. 
 
 This process can be time consuming because of separate setups for each component and also error-prone due to the complex and verbose nature of Three.js syntax, which requires complete understanding of the 3D scene structure and components. 
 
@@ -41,7 +41,7 @@ yarn add flowjs3d
 ```javascript [JavaScript]
 import FlowJS from 'flowjs3d';
 
-const canvas = document.querySelector('your-scene-class-or-id-or-whatever');
+const canvas = document.querySelector('#scene-container');
 
 const config = {
   canvas: canvas,
@@ -56,7 +56,7 @@ const config = {
     position: [0, 2, 8],
   },
 
-  // Orbit controls are completely optional
+  // Orbit controls enable click and drag rotation and are completely optional
   controls: {
     enableDamping: true,
     autoRotate: true,
@@ -68,7 +68,7 @@ const scene = new FlowJS(config);
 async function loadAssets() {
   try {
     await scene.loadHDRI('/path/to/your/environment.hdr');
-    const model = await scene.loadModel('/path/to/your/model.glb');
+    const model = await scene.loadGLTF('/path/to/your/model.glb');
     scene.centerObject(model);
     scene.start();
   } catch (error) {
@@ -78,6 +78,6 @@ async function loadAssets() {
 
 loadAssets();
 ```
+If you still find the code a lot to take in, don't worry! This guide will take you step by step through the library and your 3D object will be up and running on your application in no time!
 
-:::
-
+If you would like to review some must know and core 3D concepts, we have made you another comprehensive guide over [here](/core-concepts/webgl.md).

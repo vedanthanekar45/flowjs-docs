@@ -21,9 +21,10 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Getting Started',
+        text: 'Guide',
         items: [
-          { text: 'Introduction', link: '/getting-started/introduction.md'}
+          { text: 'Introduction', link: '/getting-started/introduction.md'},
+          { text: 'Making Your First Scene', link: '/getting-started/first-scene.md'}
         ]
       }
     ],
