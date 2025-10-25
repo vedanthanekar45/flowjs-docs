@@ -8,8 +8,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Getting Started', link: '/getting-started/introduction.md'},
+      { text: 'Core Concepts', link: '/core-concepts/3d-work.md'},
       { text: 'Examples', link: '/examples/markdown-examples.md' },
-      { text: 'Getting Started', link: '/getting-started/introduction.md'}
+      { 
+        text: 'v1.0', 
+        items: [
+          { text: 'Changelog', link: '/changelog' },
+          { text: 'npm', link: 'https://www.npmjs.com/' }
+        ]
+      }
     ],
 
     sidebar: [
