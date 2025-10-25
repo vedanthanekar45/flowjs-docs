@@ -17,7 +17,7 @@ LOD requires the creation of lower-poly clones based off your original model. Th
 This problem can be solved with a simple command consisting of two parameters, the input, that is the path of your model, and your output, that is, the path where you want to store the clones:
 
 ``` bash
-node lod.js /path/to/your/model.glb /path/to/your/output
+npx generate-lod-models /path/to/your/model.glb /path/to/your/output
 ```
 
 This command will create 3 identical models, each with low polygon count than the other, with hardcoded properties.
