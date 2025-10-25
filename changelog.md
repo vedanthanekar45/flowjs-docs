@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-10-25
 
 ### Added
-- 🎉 **Initial Release** of Flow.js
 - Seamless Blender to Three.js integration
 - Automated scene setup and configuration
 - HDRI environment loading and management

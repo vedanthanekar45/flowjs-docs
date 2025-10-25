@@ -22,13 +22,6 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/examples/markdown-examples.md' },
-          { text: 'Runtime API Examples', link: '/examples/api-examples.md' }
-        ]
-      },
-      {
         text: 'Getting Started',
         items: [
           { text: 'Introduction', link: '/getting-started/introduction.md'},
@@ -46,6 +39,13 @@ export default defineConfig({
           { text: 'Materials and Shaders', link: '/core-concepts/materials.md'},
           { text: 'HDRI and Environments', link: '/core-concepts/hdri.md'},
           { text: 'Renderer', link: '/core-concepts/renderer.md'}
+        ]
+      },
+      {
+        text: 'Examples',
+        items: [
+          { text: 'Markdown Examples', link: '/examples/markdown-examples.md' },
+          { text: 'Runtime API Examples', link: '/examples/api-examples.md' }
         ]
       },
     ],
