@@ -6,6 +6,7 @@ export default defineConfig({
   description: "Documentation Website for FlowJS",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    siteTitle: false, // Hide default title to use our custom logo
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Getting Started', link: '/getting-started/introduction.md'},

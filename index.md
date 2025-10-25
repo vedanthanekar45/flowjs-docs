@@ -21,4 +21,3 @@ features:
   - title: Flexible
     details: Compatible with any framework or any browser that supports WebGL
 ---
-
