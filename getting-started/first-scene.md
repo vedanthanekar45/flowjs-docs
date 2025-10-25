@@ -120,8 +120,10 @@ Now, open your browser to the local address (usually http://localhost:3000), and
 ## Next Steps
 And voila! You've successfully created your first scene! Now you're ready to explore what else Flow can do.
 
-- Guides: Dive into the Guides section to learn about core concepts like lighting, materials, and animations.
+- [Core Concepts](/core-concepts/3d-work.md): Learn about basic 3D concepts like meshes, lighting and materials.
+
+- Guides: Go through the functions, classes and their properties that are required to make your scene come to life.
 
 - API Reference: Check out the for a detailed dictionary of every class and method.
 
-- Examples: Visit the gallery to see live demos and get inspiration.
+- [Examples](/examples/markdown-examples.md): Visit the gallery to see live demos and get inspiration.

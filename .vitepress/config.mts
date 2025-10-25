@@ -21,12 +21,25 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Guide',
+        text: 'Getting Started',
         items: [
           { text: 'Introduction', link: '/getting-started/introduction.md'},
-          { text: 'Making Your First Scene', link: '/getting-started/first-scene.md'}
+          { text: 'Making Your First Scene', link: '/getting-started/first-scene.md'},
+          { text: 'Optimizations', link: '/getting-started/optimizations.md'}
         ]
-      }
+      },
+      {
+        text: 'Core Concepts',
+        items: [
+          { text: 'How Does 3D Work', link: '/core-concepts/3d-work.md'},
+          { text: 'Meshes and Vertices', link: '/core-concepts/meshes.md'},
+          { text: 'Camera', link: '/core-concepts/camera.md'},
+          { text: 'Lighting', link: '/core-concepts/lighting.md'},
+          { text: 'Materials and Shaders', link: '/core-concepts/materials.md'},
+          { text: 'HDRI and Environments', link: '/core-concepts/hdri.md'},
+          { text: 'Renderer', link: '/core-concepts/renderer.md'}
+        ]
+      },
     ],
 
     socialLinks: [
