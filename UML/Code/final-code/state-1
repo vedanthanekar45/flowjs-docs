@@ -1,0 +1,23 @@
+@startuml
+title FlowJS State Diagram (Part 1: Initialization & Asset Loading)
+
+
+[*] --> Uninitialized
+Uninitialized --> Initialized : new FlowJS()
+
+Initialized --> LoadingAssets : loadModel(), loadHDRI()
+
+state "Loading LOD" as LODLoad {
+  [*] --> LoadLowPoly
+  LoadLowPoly --> DisplayReady : LOD2 loaded
+  DisplayReady --> LoadingHighLODs : Async loading
+  LoadingHighLODs --> AllLODsReady : LOD0, LOD1 loaded
+}
+
+LoadingAssets --> LODLoad : LOD enabled
+LoadingAssets --> AssetsReady : Standard loading
+
+LODLoad --> ReadyToRender
+AssetsReady --> ReadyToRender
+
+@enduml

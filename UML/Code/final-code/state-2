@@ -1,0 +1,18 @@
+@startuml
+title FlowJS State Diagram (Part 2: Rendering & Runtime)
+
+
+ReadyToRender --> Rendering : start()
+
+state Rendering {
+  [*] --> UpdateLoop
+  UpdateLoop --> UpdateLODs : Each frame
+  UpdateLODs --> RenderFrame
+  RenderFrame --> UpdateLoop
+}
+
+Rendering --> Stopped : stop()
+Stopped --> Rendering : start()
+Rendering --> [*] : dispose()
+
+@enduml

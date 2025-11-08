@@ -1,0 +1,38 @@
+@startuml
+title FlowJS Data Flow Diagram
+
+skinparam defaultTextAlignment center
+skinparam linetype ortho
+skinparam rectangle {
+  BackgroundColor White
+  BorderColor Black
+}
+
+rectangle "Developer" as User
+
+database "Models" as Models
+database "LOD Files" as LODFiles
+database "HDRI" as HDRI
+
+package "FlowJS" {
+  rectangle "1. FlowJS Core" as Core
+  rectangle "2. loader.js" as Loader
+  rectangle "3. Managers" as Managers
+  rectangle "4. updateManager" as UpdateMgr
+  rectangle "5. Renderer" as Renderer
+}
+
+rectangle "Canvas" as Canvas
+
+User --> Core : Initialize & config
+Core --> Loader : Load assets
+Loader --> Models : Read
+Loader --> LODFiles : Read LOD0-2
+Loader --> HDRI : Read
+Loader --> Managers : Store
+Loader --> UpdateMgr : Register LODs
+Core --> UpdateMgr : Update
+Core --> Renderer : Render
+Renderer --> Canvas : Display
+
+@enduml

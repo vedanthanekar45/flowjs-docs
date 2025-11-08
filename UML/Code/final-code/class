@@ -1,0 +1,83 @@
+@startuml
+title FlowJS Class Diagram (Report Layout)
+
+' Enforce a top-to-bottom layout, which is better for portrait pages
+top to bottom direction
+
+' --- Main Facade Class ---
+class FlowJS {
+  +loadModel(url, options)
+  +loadHDRI(url, options)
+  +addLight(key, options)
+  +start()
+  +stop()
+}
+
+' --- Utility Modules ---
+package "Utilities" {
+  class "loader.js" <<module>> {
+    +loadGLTF(url, options)
+    +loadHDRI(url, options)
+  }
+
+  class "updateManager" <<singleton>> {
+    +add(lod)
+    +update(camera)
+  }
+}
+
+' --- Core Manager Components ---
+' Using a 'frame' helps to visually group these components
+frame "Core Managers" {
+  class SceneManager {
+    +addObject(object)
+    +getScene()
+  }
+
+  class Renderer {
+    +render(scene, camera)
+  }
+
+  class ModelManager {
+    +addModel(key, model)
+    +getModel(key)
+  }
+
+  class MaterialManager {
+    +createMaterial(type, options)
+  }
+
+  class LightingManager {
+    +createLight(type, options)
+    +addLight(key, light)
+  }
+
+  class EnvironmentManager {
+    +setHDRIEnvironment(scene, texture)
+  }
+
+  class CameraManager {
+    +getActiveCamera()
+  }
+}
+
+
+' --- Relationships ---
+
+' FlowJS is composed of all its managers
+FlowJS *-- SceneManager
+FlowJS *-- Renderer
+FlowJS *-- ModelManager
+FlowJS *-- MaterialManager
+FlowJS *-- LightingManager
+FlowJS *-- EnvironmentManager
+FlowJS *-- CameraManager
+
+' FlowJS uses the utilities
+FlowJS ..> "loader.js" : uses
+FlowJS ..> "updateManager" : uses
+
+' The loader interacts with the update manager
+"loader.js" ..> "updateManager" : registers LODs
+
+@enduml

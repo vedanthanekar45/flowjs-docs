@@ -1,0 +1,35 @@
+@startuml
+title FlowJS Progressive LOD Loading
+
+participant Developer
+participant FlowJS
+participant loader
+participant updateManager
+
+Developer -> FlowJS : loadModel(url, {lod: true})
+activate FlowJS
+
+FlowJS -> loader : loadGLTF()
+activate loader
+
+loader -> loader : Load LOD2 (low-poly)
+loader -> updateManager : register(lodObject)
+loader -> FlowJS : return low-poly
+
+FlowJS --> Developer : Model visible!
+deactivate FlowJS
+
+loader -> loader : Load LOD0, LOD1 async
+deactivate loader
+
+loop Every Frame
+  Developer -> FlowJS : (render loop)
+  activate FlowJS
+  FlowJS -> updateManager : update(camera)
+  activate updateManager
+  updateManager -> updateManager : Switch LOD levels
+  deactivate updateManager
+  deactivate FlowJS
+end
+
+@enduml

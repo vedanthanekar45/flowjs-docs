@@ -1,0 +1,51 @@
+@startuml
+title FlowJS Package Diagram
+
+package "FlowJS Library" {
+
+  package "core" {
+    class FlowJS
+    class SceneManager
+    class Renderer
+    class loader
+  }
+
+  package "modules" {
+    class ModelManager
+    class MaterialManager
+    class LightingManager
+    class EnvironmentManager
+    class CameraManager
+  }
+
+  package "lod" <<New>> {
+    class Progressive_Loader
+    class updateManager
+  }
+
+  package "utils" {
+    class Config
+    class Logger
+    class Helpers
+  }
+
+  FlowJS --> SceneManager
+  FlowJS --> Renderer
+  FlowJS --> modules
+  FlowJS --> loader
+  FlowJS --> utils
+  
+  loader --> Progressive_Loader
+  loader --> updateManager
+}
+
+package "Three.js" <<external>> {
+  class WebGLRenderer
+  class GLTFLoader
+  class THREE_LOD
+}
+
+FlowJS ..> "Three.js"
+Progressive_Loader ..> THREE_LOD
+
+@enduml

@@ -1,0 +1,56 @@
+@startuml
+title FlowJS Component Diagram 
+
+skinparam componentStyle rectangle
+left to right direction
+
+package "Assets" {
+  database [Models]
+  database [LOD Files]
+  database [HDRI]
+}
+
+component [Three.js] <<external>>
+
+package "FlowJS System" {
+  
+  [FlowJS Core]
+  
+  package "Core Components" {
+    [Renderer]
+    [loader.js]
+    [updateManager]
+  }
+  
+  package "Managers" {
+    [SceneManager]
+    [ModelManager]
+    [MaterialManager]
+    [LightingManager]
+    [EnvironmentManager]
+    [CameraManager]
+  }
+}
+
+' --- Internal connections ---
+[FlowJS Core] --> [SceneManager]
+[FlowJS Core] --> [ModelManager]
+[FlowJS Core] --> [MaterialManager]
+[FlowJS Core] --> [LightingManager]
+[FlowJS Core] --> [EnvironmentManager]
+[FlowJS Core] --> [CameraManager]
+
+[FlowJS Core] --> [Renderer]
+[FlowJS Core] --> [loader.js]
+[FlowJS Core] --> [updateManager]
+
+' --- External dependencies ---
+[FlowJS Core] ..> [Three.js]
+[Renderer] ..> [Three.js]
+
+' --- Asset dependencies ---
+[loader.js] --> [Models]
+[loader.js] --> [LOD Files]
+[loader.js] --> [HDRI]
+
+@enduml

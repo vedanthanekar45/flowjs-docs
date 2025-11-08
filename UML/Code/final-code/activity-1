@@ -1,0 +1,40 @@
+@startuml
+title Activity Diagram: Scene Setup & Asset Loading
+
+|Developer|
+start
+:Initialize FlowJS;
+
+|FlowJS|
+:Setup managers and camera;
+
+|Developer|
+:Load model with LOD;
+
+|Loader|
+if (LOD enabled?) then (yes)
+  :Load low-poly first;
+  :Display immediately;
+  :Load high-poly async;
+  :Register with updateManager;
+else (no)
+  :Load standard model;
+endif
+
+|FlowJS|
+:Add to scene;
+
+|Developer|
+:Load HDRI;
+
+|Loader|
+:Apply environment;
+
+|Developer|
+:Add lights;
+
+|FlowJS|
+:Start render loop;
+
+stop
+@enduml
