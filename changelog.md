@@ -78,7 +78,7 @@ This is the first stable release of Flow.js! After months of development and tes
 - **Developer Friendly**: Intuitive API with comprehensive TypeScript support
 
 **Migration from Alpha/Beta:**
-If you're upgrading from pre-1.0 versions, please check the [Migration Guide](/migration) for breaking changes and upgrade instructions.
+If you're upgrading from pre-1.0 versions, please review the changelog above for breaking changes and upgrade instructions.
 
 **Getting Started:**
 ::: code-group

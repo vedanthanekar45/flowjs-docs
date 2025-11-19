@@ -115,7 +115,7 @@ A simpler way is to use the serve package:
 npx serve
 ```
 
-Now, open your browser to the local address (usually http://localhost:3000), and you should see your 3D model rendering and rotating in the scene!
+Now, open your browser to the local development address, and you should see your 3D model rendering and rotating in the scene!
 
 ## Next Steps
 And voila! You've successfully created your first scene! Now you're ready to explore what else Flow can do.

@@ -80,4 +80,4 @@ loadAssets();
 ```
 If you still find the code a lot to take in, don't worry! This guide will take you step by step through the library and your 3D object will be up and running on your application in no time!
 
-If you would like to review some must know and core 3D concepts, we have made you another comprehensive guide over [here](/core-concepts/webgl.md).
+If you would like to review some must know and core 3D concepts, we have made you another comprehensive guide over [here](/core-concepts/3d-work.md).
